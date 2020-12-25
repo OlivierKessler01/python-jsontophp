@@ -54,3 +54,7 @@ static struct PyModuleDef jsontophpmodule = {
 	-1,
 	JsonToPhpMethods
 };
+
+PyMODINIT_FUNC PyInit_jsontophp(void) {
+	return PyModule_Create(&jsontophpmodule);
+}
