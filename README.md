@@ -1,6 +1,7 @@
 # python-jsontophp
 
-This Python extension provides interface to functions that convert JSON objects to PHP objects.
+This is a pratice CPython extension developmment.
+This Python extension provides interface to functions that convert JSON objects to useless PHP objects.
 
 #To install the extension on yoyr machine : 
 python3 setup.py install

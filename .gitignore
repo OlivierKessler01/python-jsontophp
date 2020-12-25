@@ -2,6 +2,6 @@
 *.layout
 *.depend
 
-/bin
-/obj
-/build
+/src/bin
+/src/obj
+/src/build
