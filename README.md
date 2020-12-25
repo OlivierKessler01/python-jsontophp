@@ -7,9 +7,9 @@ python3 setup.py install
 #Or if you prefer, using gcc to compile
 CC=gcc python3 setup.py install
 #Or, isolated in a Docker contianer
-docker build -f Dockerfile -t python_jsontophp .
-sudo docker run -d -it --name python_jsontophp_1 python_jsontophp /bin/bash
-docker exec -it python_jsontophp_1 /bin/bash
+docker-compose up -d
+docker exec -it python_jsontophp_1 /bin/sh
+python3 setup.py install
 
 
 #usage

@@ -4,7 +4,7 @@ def main():
     setup(
             name="jsontophp",
             version="1.0.0",
-            description="Python interface to convert JSON objects into PHP Objects"),
+            description="Python interface to convert JSON objects into PHP Objects",
             author="Olivier Kessler",
             author_email="olivier.kessler@protonmail.com",
             ext_modules=[Extension("jsontophp", ["jsontophp.c"])])
