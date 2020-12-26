@@ -2,11 +2,11 @@
 #include <Python.h>
 #include <stdlib.h>
 
-char *jsontophp(char *json, char *result);
+void jsontophp(char *json, size_t size_json, char *result[20000]);
 
 static PyObject *method_jsontophp(PyObject *self, PyObject *args) {
-	char *str, *filename = NULL;
-	char *conversion_result = malloc(sizeof(int) * 10);
+	char str, filename = NULL;
+	char conversion_result[20000];
 
 	int bytes_copied = -1;
 
@@ -15,7 +15,7 @@ static PyObject *method_jsontophp(PyObject *self, PyObject *args) {
 		return NULL;
 	}
 
-	jsontophp(str, conversion_result);
+	jsontophp(str, sizeof(str) , &conversion_result);
 
 	FILE *fp = fopen(filename, "w");
 	bytes_copied = fputs(conversion_result, fp);
@@ -27,9 +27,12 @@ static PyObject *method_jsontophp(PyObject *self, PyObject *args) {
 /*
  *This functions converts JSON Objects into PHP objects
  */
-char *jsontophp(char *json, char *result) {
-    *result = *json;
-	return result;
+void jsontophp(char *json, size_t size_json, char *result[20000]) {
+    int i;
+    for(i=0; i < size_json; i++)
+    {
+        result[i] = json[i];
+    }
 }
 
 static PyMethodDef JsonToPhpMethods[] = {
