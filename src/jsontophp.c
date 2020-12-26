@@ -28,6 +28,7 @@ static PyObject *method_jsontophp(PyObject *self, PyObject *args) {
  *This functions converts JSON Objects into PHP objects
  */
 char *jsontophp(char *json, char *result) {
+    *result = *json;
 	return result;
 }
 

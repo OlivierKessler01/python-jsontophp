@@ -5,4 +5,4 @@ services:
     build: .
     command: tail -f /dev/null
     volumes:
-      - ./src:/usr/src/app
+      - ./:/usr/src/app

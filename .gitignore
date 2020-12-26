@@ -1,6 +1,7 @@
 *.cbp
 *.layout
 *.depend
+*.php
 
 /src/bin
 /src/obj
