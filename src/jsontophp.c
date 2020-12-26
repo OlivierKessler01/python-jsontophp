@@ -2,11 +2,12 @@
 #include <Python.h>
 #include <stdlib.h>
 
-void jsontophp(char *json, size_t size_json, char *result[20000]);
+void jsontophp(char *json, size_t size_json, char *result);
 
 static PyObject *method_jsontophp(PyObject *self, PyObject *args) {
-	char str, filename = NULL;
-	char conversion_result[20000];
+	char *str, *filename = NULL;
+	char *conversion_result;
+	conversion_result = (char*)malloc(sizeof(char));
 
 	int bytes_copied = -1;
 
@@ -15,11 +16,12 @@ static PyObject *method_jsontophp(PyObject *self, PyObject *args) {
 		return NULL;
 	}
 
-	jsontophp(str, sizeof(str) , &conversion_result);
+	jsontophp(str, sizeof(str), conversion_result);
 
 	FILE *fp = fopen(filename, "w");
 	bytes_copied = fputs(conversion_result, fp);
 	fclose(fp);
+	free(conversion_result);
 
 	return PyLong_FromLong(bytes_copied);
 }
@@ -27,11 +29,13 @@ static PyObject *method_jsontophp(PyObject *self, PyObject *args) {
 /*
  *This functions converts JSON Objects into PHP objects
  */
-void jsontophp(char *json, size_t size_json, char *result[20000]) {
-    int i;
-    for(i=0; i < size_json; i++)
+void jsontophp(char *json, size_t size_json, char *conversion_result) {
+    conversion_result = (char*)malloc(sizeof(char)*size_json);
+
+    for(int i=0; i < size_json; i++)
     {
-        result[i] = json[i];
+        conversion_result[i] = json[i];
+        printf("%s", json);
     }
 }
 
