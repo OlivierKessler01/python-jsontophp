@@ -2,6 +2,8 @@
 *.layout
 *.depend
 *.php
+*.so
+*.o
 
 /src/bin
 /src/obj

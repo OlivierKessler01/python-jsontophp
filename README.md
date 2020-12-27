@@ -25,6 +25,10 @@ python3
 ## Testing 
 I'm running tests on a dynamic library (.so file) (compiled from the .c file) in Linux using python and python's unit-testing library unittest located in tests/.
 
-
+## Compile locally
+run :
+```sh
+make
+```
 
 
