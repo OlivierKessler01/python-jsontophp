@@ -26,9 +26,14 @@ python3
 I'm running tests on a dynamic library (.so file) (compiled from the .c file) in Linux using python and python's unit-testing library unittest located in tests/.
 
 ## Compile locally
-run :
+Run :
 ```sh
+make clean
 make
 ```
-
+Generate Assembly code (.asm file generated in the src/ folder):
+```sh
+make clean
+make generate_assembly
+```
 

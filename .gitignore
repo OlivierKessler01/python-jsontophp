@@ -4,6 +4,7 @@
 *.php
 *.so
 *.o
+*.asm
 
 /src/bin
 /src/obj

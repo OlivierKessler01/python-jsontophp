@@ -10,3 +10,10 @@ src/jsontophp.so: src/jsontophp.o
 src/jsontophp.o: src/jsontophp.c $(DEPS)
 	$(CC) $(CFLAGS) $(PY_FLAGS) -c -o $@ $<
 
+clean:
+	rm -f src/*.so src/*.o src/*.asm
+
+generate_assembly:
+	$(CC) -S $(CFLAGS) $(PY_FLAGS) -c -o src/jsontophp.asm src/jsontophp.c
+	
+
