@@ -5,7 +5,7 @@
 *.so
 *.o
 *.asm
-*/out
+*.out
 
 /src/bin
 /src/obj

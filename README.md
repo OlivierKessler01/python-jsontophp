@@ -19,7 +19,7 @@ CC=gcc python3 src/setup.py install
 ```sh
 python3
 >>> import jsontophp
->>> jsontophp.jsontophp({"title" : "jsonObject"}, "output/write.php")
+>>> jsontophp.jsontophp({"class" : "WhateverClassName", "methods" : [ "method1", "method2"], "members" ["member1", "member2", "member3"]}, "output/write.php")
 ```
 
 ## Testing 
