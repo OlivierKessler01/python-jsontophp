@@ -131,13 +131,14 @@ int map_json_to_php_classes(char json[MAX_JSON_CHARACTERS], size_t size_json, st
 /*
  *This functions converts a JSON string into a string of PHP classes
  */
-char* jsontophp(char json[MAX_JSON_CHARACTERS], size_t size_json, char conversion_result[1000]) {
+char* jsontophp(char *json, char conversion_result[1000]) {
 	
 	struct php_class php_classes[1000];
 	int number_of_classes;
 	char php_class_string[300];
+	size_t size_json = strlen(json);
 
-	if(size_json > 1000) {
+	if(size_json > MAX_JSON_CHARACTERS) {
 		sprintf(conversion_result, "JSON input is too long, max number of characters is %d", MAX_JSON_CHARACTERS);
 		return conversion_result;
 	}
@@ -154,8 +155,7 @@ char* jsontophp(char json[MAX_JSON_CHARACTERS], size_t size_json, char conversio
 int main(){
 	char conversion_result[1000] = "";
 	char json[MAX_JSON_CHARACTERS] = "{class : testclass}";	
-	jsontophp(json, strlen(json), conversion_result);
-
+	jsontophp(json, conversion_result);
 	printf("%s", conversion_result);	
 	return 0;
 }

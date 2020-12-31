@@ -8,11 +8,11 @@ This Python extension provides interface to functions that convert JSON objects 
 docker-compose up -d
 docker exec -it python_jsontophp_1 /bin/sh
 cd src/
-python3 src/setup.py install
+python3 setup.py install
 ```
 ### Or if you prefer, using gcc to compile
 ```sh
-CC=gcc python3 src/setup.py install
+CC=gcc python3 setup.py install
 ```
 
 ## Usage

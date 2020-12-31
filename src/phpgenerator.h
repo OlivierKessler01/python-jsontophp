@@ -1,6 +1,7 @@
 
+#define MAX_JSON_CHARACTERS 1000  
+
 /*
  *This functions converts JSON Objects into PHP objects
  */
-void jsontophp(char *json, size_t size_json, char *conversion_result);
-
+char* jsontophp(char json[MAX_JSON_CHARACTERS], char conversion_result[1000]);
