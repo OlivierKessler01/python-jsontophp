@@ -11,7 +11,7 @@ src/jsontophp.o: src/jsontophp.c $(DEPS)
 	$(CC) $(CFLAGS) $(PY_FLAGS) -c -o $@ $<
 
 clean:
-	rm -f src/*.so src/*.o src/*.asm
+	sudo rm -rf src/*.so src/*.o src/*.asm src/build/*
 
 generate_assembly:
 	$(CC) -S $(CFLAGS) $(PY_FLAGS) -c -o src/jsontophp.asm src/jsontophp.c
